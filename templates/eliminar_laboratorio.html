@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Eliminar Laboratorio</h1>
+    <p>¿Estás seguro de que deseas eliminar este laboratorio?</p>
+    <p><strong>Nombre:</strong> {{ laboratorio.nombre }}</p>
+    <p><strong>Ciudad:</strong> {{ laboratorio.ciudad }}</p>
+    <p><strong>País:</strong> {{ laboratorio.pais }}</p>
+
+    <form method="POST" action="{% url 'eliminar_laboratorio' laboratorio.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar">
+        <a href="{% url 'lista_laboratorios' %}">Cancelar</a>
+    </form>
+    {% endblock %}   
