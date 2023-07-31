@@ -6,8 +6,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Laboratorio
 from .forms import LaboratorioForm
 
+
 def indexView(request):
     template_name = 'index.html'
+    
     return render(request, template_name)
 
 def lista_laboratorios(request):
